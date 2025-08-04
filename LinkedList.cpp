@@ -1,5 +1,6 @@
 #include <iostream>
 using  namespace std;
+//Node class Constructor
 class Node{
     public:
     int value;
@@ -10,6 +11,7 @@ class Node{
     }
     
 };
+//Linked List Constructor
 class LinkedList {
     private:
     int length;
@@ -23,6 +25,7 @@ class LinkedList {
     length = 1;
 
 }
+//Print List function
 void printList(){
     Node* temp = head;
     while (temp != nullptr){
@@ -30,16 +33,20 @@ void printList(){
         temp = temp->next;
     }
     }
+    //GET Head
     void getHead(){
         cout<<"Head is "<<head->value<<endl;
     }
+    //GET Tail
     void getTail(){
         cout<<"Tail is "<<tail->value<<endl;
     }
+    //GET Tail
     void getLength(){
         cout<<"Length is "<<length<<endl;
         
     }
+    //Append Function
      void append(int value){
         Node* Newnode = new Node(value);
         if (length == 0){
@@ -52,6 +59,7 @@ void printList(){
         }  
         length++; 
     } 
+ //Delete Last function
     void deleteLast(){
         if (length==0) return;
             Node* temp = head;
@@ -71,6 +79,7 @@ void printList(){
                 delete temp;
 
         }
+  //Prepend Function
       void prepend(int value){
             Node* newNode = new Node (value);
             if(length==0){
@@ -84,6 +93,7 @@ void printList(){
             }
             length ++;        
         }
+//Delete First Function
   void Deletefirst(){
             Node* temp = head;
           if(length==0) return ;
@@ -98,6 +108,7 @@ void printList(){
             delete temp;
             length--;
           }
+//Get Node Function
     Node* get(int index){
         Node* temp = head;
         if(index<0||index>=length) return nullptr;
@@ -107,6 +118,7 @@ void printList(){
         return temp;
 
     }
+//Set Function
     bool set(int index, int value){
         Node* temp = get(index);
         if(temp!=nullptr){
@@ -116,6 +128,7 @@ void printList(){
         return false;
 
     }
+//Insert Function
     bool insert(int index, int value){
         Node* newNode =new Node(value);
         Node* temp = get(index-1);
@@ -136,6 +149,7 @@ void printList(){
 
         }
     }
+//Delete Node
     void deleteNode(int index){
         if(index<0||index>=length) return ;
         if(index==0){
@@ -153,7 +167,7 @@ void printList(){
         }
 
     }
-
+//Destructor
  ~LinkedList(){
         Node * temp = head;
         while (head!=nullptr){
@@ -165,14 +179,9 @@ void printList(){
         }
 };
 int main(){
+    //Object Creation
     LinkedList* myLinkedList = new LinkedList(1);
-    myLinkedList->append(2);
     myLinkedList->append(3);
-    myLinkedList->append(4);
-    myLinkedList->set(1,6);
-    myLinkedList->insert(2,8);
-    myLinkedList->printList();
-  
-
-
+    //Call any function by using myLinkedList(Object name)->function_name();
 }
+
