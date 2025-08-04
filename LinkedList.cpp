@@ -41,7 +41,7 @@ void printList(){
     void getTail(){
         cout<<"Tail is "<<tail->value<<endl;
     }
-    //GET Tail
+    //GET Length
     void getLength(){
         cout<<"Length is "<<length<<endl;
         
@@ -184,4 +184,5 @@ int main(){
     myLinkedList->append(3);
     //Call any function by using myLinkedList(Object name)->function_name();
 }
+
 
